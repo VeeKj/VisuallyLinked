@@ -1,0 +1,22 @@
+body {
+    margin:0;
+}
+#root {
+
+    /* Color Variables */
+    --background: #1A1826;
+    --darkblue: #323859;
+    --lightblue: #3084F2;
+    --lightgreen: #85D982;
+    --orange: #F2A766;
+
+    /* Sizing */
+    width: 100%;
+    height: 1500px;
+    margin:0;
+    display: flex;
+    justify-content: center;
+
+    /* Styling */
+    background: var(--background)
+}
