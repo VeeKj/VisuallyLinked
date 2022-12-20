@@ -151,12 +151,15 @@ export default function VL() {
 
                     <div id="ads-setup"  class="packagesitem">
                         <h2>Ad Setup</h2>
+                        <p>Get started with social media advertising and reach new potential customers with our Setup tier. Includes initial consultation, ad account setup and optimization, customized ad strategy, ongoing campaign management, and monthly reporting.</p>
                     </div>
                     <div id="ads-medium"  class="packagesitem">
                         <h2>Ad Medium</h2>
+                        <p>Take your social media advertising to the next level with our Medium tier. In addition to everything included in the Setup tier, you'll receive additional ad spend, advanced targeting options, and expert consultation to maximize the effectiveness of your campaigns. Plus, get access to our comprehensive analytics and reporting tools to track the success of your ads.</p>
                     </div>
                     <div id="ads-advanced"  class="packagesitem">
                         <h2>Ad Advanced</h2>
+                        <p>Unleash the full potential of your social media advertising with our Advanced tier. In addition to everything included in the Setup and Medium tiers, you'll receive access to our full range of ad targeting and optimization tools, as well as in-depth consultation from our team of expert strategists. Our Advanced tier is perfect for businesses that are looking to drive significant growth through social media advertising and want the most comprehensive support available.</p>
                     </div>
 
                 {/*Packages: Top text*/}
