@@ -9,14 +9,30 @@ body {
     --lightblue: #3084F2;
     --lightgreen: #85D982;
     --orange: #F2A766;
+    --heroimagebottom: #010108;
 
     /* Sizing */
-    width: 100%;
-    height: 4650px;
     margin:0;
+    padding:0;
     display: flex;
     justify-content: center;
 
     /* Styling */
     background: var(--background);
+    overflow:hidden;
 }
+html {
+    margin:0
+}
+::-webkit-scrollbar {
+    width: 8px;
+    
+}
+::-webkit-scrollbar-track {
+    background: rgb(1,1,8);
+    background: linear-gradient(180deg, rgba(1,1,8,1) 0%, rgba(50,56,89,1) 100%);
+}
+::-webkit-scrollbar-thumb {
+    background: rgb(50,56,89);
+    background: linear-gradient(180deg, rgba(50,56,89,1) 0%, rgba(50,56,89,1) 100%);
+  }

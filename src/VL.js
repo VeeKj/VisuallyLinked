@@ -7,7 +7,12 @@ import React from 'react'
 
 window.addEventListener("load", (event) => {
     console.log("page is fully loaded");
+    setTimeout(() => {
+      expandexpertisephone()
+    }, 1000);
   });
+
+
 
 
 /************************************************
@@ -19,179 +24,49 @@ export default function VL() {
   return (
     <>
     <div id="vlwrapper">
-        <div id = "navbarwrap">
-            <div id = "logowrap">
-                <p id = "visuallylinkedp" ><span id="vlporange">Visually</span><span id="vlpdarkblue"> Linked</span></p>
+        <div id="Homepage">
+            <div id="nav-icon-wrap">
+                <span></span>
+                <span class="navgreen"></span>
+                <span></span>
             </div>
-            <div id = "servicecontact">
-                <ul>
-                    <li id="service-tab" className='navitems' onClick={servicestab}>Services</li>
-                    <div id="triangleservices" onClick={servicestab}></div>
-                    <li id="contact-tab" className='navitems'>Contact us</li>
-                </ul>
+            <div id="heroimage-container">
+                <h1 id="hero-text">Maximize your <span class="hgreen">reach</span> and <span class="hgreen">impact</span> with our custom solutions</h1>
+                <img id = "hero-image" src={require("./bgimg.png")} alt="bgimg"></img>
+                <button class = "herobuttons" id = "herobutton-getstarted">Get Started</button>
+                <button class = "herobuttons" id = "herobutton-learnmore">Learn More</button>
             </div>
-            <div id="service-dropdown">
-                <div id="service-dropdown-content">
-
-                    <div id = "service-dropdown-discord">
-                    </div>
-                    <div id = "service-dropdown-webdev">
-                    </div>
-                    <div id = "service-dropdown-management">
-                    </div>
-                    <div id = "service-dropdown-strategy">
-                    </div>
-                    <div id = "service-dropdown-design">
-                    </div>
-                    <div id = "service-dropdown-googleads">
-                    </div>
-                    <div id = "service-dropdown-socialmedia">
-                    </div>
-
-
+            <div id = "expertise-section">
+              <div id = "expertise-hide-content">
+                <h1>Our expertise</h1>
+                <div id="expertise-icon-wrap">
+                  <div id="expertise-discord">
+                    <img id="expertise-discord-image" src={require("./discord.png")}alt="discord icon"></img>
+                    <h2 id="expertise-discord-text">Discord Marketing</h2>
+                  </div>
+                  <div id="expertise-management">
+                    <img id="expertise-management-image" src={require("./management.png")}alt="discord icon"></img>
+                    <h2 id="expertise-management-text">Social Media Management</h2>
+                  </div>
+                  <div id="expertise-insights">
+                    <img id="expertise-insights-image" src={require("./insights.png")}alt="discord icon"></img>
+                    <h2 id="expertise-insights-text">Strategy & Insights</h2>
+                  </div>
+                  <div id="expertise-webdev">
+                    <img id="expertise-webdev-image" src={require("./webdev.png")}alt="discord icon"></img>
+                    <h2 id="expertise-webdev-text">Web Development</h2>
+                  </div>
+                  <div id="expertise-design">
+                    <img id="expertise-design-image" src={require("./design.png")}alt="discord icon"></img>
+                    <h2 id="expertise-design-text">Design</h2>
+                  </div> 
                 </div>
+              </div>     
             </div>
-        </div>
-        <div id="homepage">
-            <div id = "heroimage">
-                <div id = "hero-introduction-text">
-                    <h1>
-                    Maximize your reach and impact with our custom solutions
-                    </h1>
-                </div>
-                <img src="bgimg.png" alt="backgroundimage"></img>
-                <div id = "hero-img-button-wrap">
-                    <button class = "herobuttons" id = "hero-img-button-getstarted">Get Started</button>
-                    <button class = "herobuttons" id = "hero-img-button-ourvision">Our Vision</button>
-                </div>
-            </div>
-            <div id = "our-expertise-text">
-                <h1>Our Expertise</h1>
-            </div>
-            <div id = "expertise">
-                <div id="expertisecontainer">
-                    <div id="exp-webdev" class="expertiseitem">
-                        <h2>Web Development</h2>
-                        <p>Our team of experienced web developers is dedicated to delivering custom, high-quality websites that help our clients achieve their business goals. We offer a range of services, including e-commerce development, responsive web design, and more, using technologies such as WordPress, Shopify, and Magento. Let us help you elevate your online presence and drive success with our expert web development services</p>
-                    </div>
-                    <div id="exp-dc"  class="expertiseitem">
-                        <h2>Discord</h2>
-                        <p>From server setup to full-scale management, our team can help you leverage Discord's marketing potential. With tens of millions of new users every year, this platform offers a wealth of untapped opportunities. We offer custom emojis, roles, and automation to fully utilize Discord's capabilities and engage with your audience. Let us help you stand out and drive success with our expert Discord services.</p>
-                    </div>
-                    <div id="exp-dcmanage"  class="expertiseitem">
-                        <h2>Management</h2>
-                        <p>Take your social media presence to the next level with our expert management services. From strategy development to content creation and community management, we have the tools and expertise to help you effectively engage with your audience and achieve your business goals. Let us help you succeed on platforms like Facebook, Instagram, and Twitter.</p>
-                    </div>
-                    <div id="exp-stratinsight"  class="expertiseitem">
-                        <h2>Strategy & Insights</h2>
-                        <p>Our team of experts in strategy and insights uses AI and data tools and strategies to help businesses optimize their online presence and drive success. From data analysis and insights to AI-powered optimization, we have the knowledge and experience to help you make informed decisions and achieve your business goals. Let us help you stay ahead of the curve and succeed in the digital landscape with our comprehensive strategy and insights services.</p>
-                    </div>
-                    <div id="exp-design"  class="expertiseitem">
-                        <h2>Design</h2>
-                        <p>Our team of talented designers is dedicated to helping businesses of all sizes elevate their brand image and stand out in the digital landscape. From logo design and website design to banner designs and business cards, we have the skills and expertise to create visually stunning and effective designs that drive success. Let us help you communicate your brand's unique identity and message with our comprehensive design services.</p>
-                    </div>
-                    <div id="exp-googleads"  class="expertiseitem">
-                        <h2>SEO and Google ads</h2>
-                        <p>Our team of SEO and Google Ads experts is dedicated to helping businesses of all sizes improve their online visibility and drive traffic and sales. From keyword research and optimization to targeted advertising campaigns, we have the skills and expertise to help you achieve your business goals. Let us help you rank higher on search engines and effectively reach your target audience with our comprehensive SEO and Google Ads services.</p>
-                    </div>
-                </div>
-            </div>
-            <div id = "digital-marketing-packages-text">
-                <h1>Digital Marketing Packages</h1>
-            </div>
-            <div id = "packages">
-                <div id="packagescontainer">
-
-                {/*Packages: Discord*/}
-
-                    <div id="dcpackage-setup" class="packagesitem">
-                        <h2>Discord Setup</h2>
-                        <p>Setup package is the perfect starting point for businesses looking to get started with Discord. This budget-friendly package includes all the essentials for setting up and configuring a Discord server for your business.</p>
-                    </div>
-                    <div id="dcpackage-medium"  class="packagesitem">
-                        <h2>Discord Medium</h2>
-                        <p>Take your Discord marketing to the next level with our medium package. This comprehensive offering includes all the essentials from our setup package, plus additional features and capabilities to help you fully leverage the marketing potential of Discord.</p>
-                    </div>
-                    <div id="dcpackage-advanced"  class="packagesitem">
-                        <h2>Discord Advanced</h2>
-                        <p>Unlock the full potential of Discord marketing with our advanced package. This comprehensive offering includes all the features and capabilities of our medium package, plus advanced community management and automated systems to help you fully leverage the marketing potential of Discord.</p>
-                    </div>
-
-                {/*Packages: Web Development*/}
-
-                    <div id="web-setup"  class="packagesitem">
-                        <h2>Web Setup</h2>
-                        <p>Our Web Development - Setup package is the perfect starting point for businesses looking to get started with a professional website. This budget-friendly package includes all the essentials for setting up a basic website for your business.</p>
-                    </div>
-                    <div id="web-medium"  class="packagesitem">
-                        <h2>Web Medium</h2>
-                        <p>Take your web development to the next level with our medium package. This comprehensive offering includes all the essentials from our setup package, plus additional features and capabilities to help you fully leverage the potential of your website.</p>
-                    </div>
-                    <div id="web-advanced"  class="packagesitem">
-                        <h2>Web Advanced</h2>
-                        <p>Unlock the full potential of your website with our advanced package. This comprehensive offering includes all the features and capabilities of our medium package, plus advanced custom functionality and e-commerce integration to help you fully leverage the potential of your website.</p>
-                    </div>
-
-                {/*Packages: Strategy & Insights*/}
-
-                    <div id="strats-setup"  class="packagesitem">
-                        <h2>Strategy Setup</h2>
-                        <p>Our Strategy and Insights - Setup package is the perfect starting point for businesses looking to get started with data-driven decision making. This budget-friendly package includes all the essentials for developing a basic data strategy for your business.</p>
-                    </div>
-                    <div id="strats-medium"  class="packagesitem">
-                        <h2>Strategy Medium</h2>
-                        <p>Take your data strategy to the next level with our medium package. This comprehensive offering includes all the essentials from our setup package, plus additional features and capabilities to help you fully leverage the potential of data-driven decision making.</p>
-                    </div>
-                    <div id="strats-advanced"  class="packagesitem">
-                        <h2>Strategy Advanced</h2>
-                        <p>Unlock the full potential of data-driven decision making with our advanced package. This comprehensive offering includes all the features and capabilities of our medium package, plus advanced data analysis and insights and custom AI-powered optimization to help you fully leverage the potential of data-driven decision making.</p>
-                    </div>
-
-                {/*Packages: Social Media Advertising*/}
-
-                    <div id="ads-setup"  class="packagesitem">
-                        <h2>Ad Setup</h2>
-                        <p>Get started with social media advertising and reach new potential customers with our Setup tier. Includes initial consultation, ad account setup and optimization, customized ad strategy, ongoing campaign management, and monthly reporting.</p>
-                    </div>
-                    <div id="ads-medium"  class="packagesitem">
-                        <h2>Ad Medium</h2>
-                        <p>Take your social media advertising to the next level with our Medium tier. In addition to everything included in the Setup tier, you'll receive additional ad spend, advanced targeting options, and expert consultation to maximize the effectiveness of your campaigns. Plus, get access to our comprehensive analytics and reporting tools to track the success of your ads.</p>
-                    </div>
-                    <div id="ads-advanced"  class="packagesitem">
-                        <h2>Ad Advanced</h2>
-                        <p>Unleash the full potential of your social media advertising with our Advanced tier. In addition to everything included in the Setup and Medium tiers, you'll receive access to our full range of ad targeting and optimization tools, as well as in-depth consultation from our team of expert strategists. Our Advanced tier is perfect for businesses that are looking to drive significant growth through social media advertising and want the most comprehensive support available.</p>
-                    </div>
-
-                {/*Packages: Top text*/}
-
-                    <div class="packagetitle" id="packages-1row">
-                        <h1>
-                            Discord Marketing
-                        </h1>
-                    </div>
-                    <div class="packagetitle" id="packages-2row">
-                        <h1>
-                            Web Development
-                        </h1>
-                    </div>
-                    <div class="packagetitle" id="packages-3row">
-                        <h1 id="packages-3row">
-                            Strategy & Insights
-                        </h1>
-                    </div>
-                    <div class="packagetitle" id="packages-4row">
-                        <h1>
-                            Social Media Ads
-                        </h1>
-                    </div>
-
-                        {/*Packages: Lines*/}
-
-                        <div id="pline1"></div>
-                        <div id="pline2"></div>
-                        <div id="pline3"></div>
-
-                </div>
+            <div id="below-image-waves">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
+                <path fill="#02020e" fill-opacity="1" d="M0,0L26.7,48C53.3,96,107,192,160,197.3C213.3,203,267,117,320,117.3C373.3,117,427,203,480,234.7C533.3,267,587,245,640,229.3C693.3,213,747,203,800,213.3C853.3,224,907,256,960,245.3C1013.3,235,1067,181,1120,186.7C1173.3,192,1227,256,1280,288C1333.3,320,1387,320,1413,320L1440,320L1440,0L1413.3,0C1386.7,0,1333,0,1280,0C1226.7,0,1173,0,1120,0C1066.7,0,1013,0,960,0C906.7,0,853,0,800,0C746.7,0,693,0,640,0C586.7,0,533,0,480,0C426.7,0,373,0,320,0C266.7,0,213,0,160,0C106.7,0,53,0,27,0L0,0Z"></path>
+                </svg>
             </div>
         </div>
     </div>
@@ -199,40 +74,269 @@ export default function VL() {
   )
 }
 
-/* Tab funcs */
-let tabtoggled = "Yes"
-function servicestab(){
-    if (tabtoggled === "Yes") {
-        tabtoggled = "No"
-        document.getElementById("triangleservices").style.transform = "rotate(180deg)";
+
+
+/************************************************
+            [  Expertise section  ]
+************************************************/
+
+function expandexpertisephone() {
+  document.getElementById("expertise-section").style.height = "440px"
+  setTimeout(() => {
+    document.getElementById("expertise-hide-content").style.visibility = "visible"
+
+    /* Transition Durations */
+    document.getElementById("expertise-discord").style.transitionDuration = "0.5s"
+    document.getElementById("expertise-management").style.transitionDuration = "0.5s"
+    document.getElementById("expertise-insights").style.transitionDuration = "0.5s"
+    document.getElementById("expertise-webdev").style.transitionDuration = "0.5s"
+    document.getElementById("expertise-design").style.transitionDuration = "0.5s"
+    document.getElementById("expertise-discord-text").innerHTML = ""
+    document.getElementById("expertise-management-text").innerHTML = ""
+    document.getElementById("expertise-insights-text").innerHTML = ""
+    document.getElementById("expertise-webdev-text").innerHTML = ""
+    document.getElementById("expertise-design-text").innerHTML = ""
+    /*Expanding */
+    setTimeout(() => {
+      /* Discord */
+      document.getElementById("expertise-discord").style.width = "240px"
+      setTimeout(() => {
         setTimeout(() => {
-            document.getElementById("service-dropdown").style.transitionDuration = "0.25s";
-            document.getElementById("service-dropdown").style.visibility = "visible";
-            document.getElementById("service-dropdown").style.width = "600px";
-        }, 0);
+          document.getElementById("expertise-discord-text").innerHTML = "D"
+        }, 25);
         setTimeout(() => {
-            document.getElementById("service-dropdown").style.height = "400px";
+          document.getElementById("expertise-discord-text").innerHTML = "Di"
+        }, 50);
+        setTimeout(() => {
+          document.getElementById("expertise-discord-text").innerHTML = "Dis"
+        }, 75);
+        setTimeout(() => {
+          document.getElementById("expertise-discord-text").innerHTML = "Disc"
+        }, 100);
+        setTimeout(() => {
+          document.getElementById("expertise-discord-text").innerHTML = "Disco"
+        }, 125);
+        setTimeout(() => {
+          document.getElementById("expertise-discord-text").innerHTML = "Discor"
+        }, 150);
+        setTimeout(() => {
+          document.getElementById("expertise-discord-text").innerHTML = "Discord"
+        }, 175);
+        setTimeout(() => {
+          document.getElementById("expertise-discord-text").innerHTML = "Discord M"
+        }, 200);
+        setTimeout(() => {
+          document.getElementById("expertise-discord-text").innerHTML = "Discord Ma"
+        }, 225);
+        setTimeout(() => {
+          document.getElementById("expertise-discord-text").innerHTML = "Discord Mar"
         }, 250);
         setTimeout(() => {
-            document.getElementById("service-dropdown").style.transitionDuration = "0s";
-        }, 500);
-    }
-    else if (tabtoggled === "No") {
-        tabtoggled = "Yes"
-        document.getElementById("triangleservices").style.transform = "rotate(0deg)";
+          document.getElementById("expertise-discord-text").innerHTML = "Discord Mark"
+        }, 275);
         setTimeout(() => {
-            document.getElementById("service-dropdown").style.transitionDuration = "0.25s";
-            document.getElementById("service-dropdown").style.width = "0px";
-        }, 0);
+          document.getElementById("expertise-discord-text").innerHTML = "Discord Marke"
+        }, 300);
         setTimeout(() => {
-            document.getElementById("service-dropdown").style.height = "0px";
+          document.getElementById("expertise-discord-text").innerHTML = "Discord Market"
+        }, 325);
+        setTimeout(() => {
+          document.getElementById("expertise-discord-text").innerHTML = "Discord Marketi"
+        }, 350);
+        setTimeout(() => {
+          document.getElementById("expertise-discord-text").innerHTML = "Discord Marketin"
+        }, 375);
+        setTimeout(() => {
+          document.getElementById("expertise-discord-text").innerHTML = "Discord Marketing"
+        }, 400);
+      }, 300);
+      /* Management */
+      document.getElementById("expertise-management").style.width = "290px"
+      setTimeout(() => {
+        setTimeout(() => {
+          document.getElementById("expertise-management-text").innerHTML = "S"
+        }, 25);
+        setTimeout(() => {
+          document.getElementById("expertise-management-text").innerHTML = "So"
+        }, 50);
+        setTimeout(() => {
+          document.getElementById("expertise-management-text").innerHTML = "Soc"
+        }, 75);
+        setTimeout(() => {
+          document.getElementById("expertise-management-text").innerHTML = "Soci"
+        }, 100);
+        setTimeout(() => {
+          document.getElementById("expertise-management-text").innerHTML = "Socia"
+        }, 125);
+        setTimeout(() => {
+          document.getElementById("expertise-management-text").innerHTML = "Social"
+        }, 150);
+        setTimeout(() => {
+          document.getElementById("expertise-management-text").innerHTML = "Social M"
+        }, 175);
+        setTimeout(() => {
+          document.getElementById("expertise-management-text").innerHTML = "Social Me"
+        }, 200);
+        setTimeout(() => {
+          document.getElementById("expertise-management-text").innerHTML = "Social Med"
+        }, 225);
+        setTimeout(() => {
+          document.getElementById("expertise-management-text").innerHTML = "Social Medi"
         }, 250);
         setTimeout(() => {
-            document.getElementById("service-dropdown").style.transitionDuration = "0s";
-            document.getElementById("service-dropdown").style.visibility = "hidden";
+          document.getElementById("expertise-management-text").innerHTML = "Social Media"
+        }, 275);
+        setTimeout(() => {
+          document.getElementById("expertise-management-text").innerHTML = "Social Media M"
+        }, 300);
+        setTimeout(() => {
+          document.getElementById("expertise-management-text").innerHTML = "Social Media Ma"
+        }, 325);
+        setTimeout(() => {
+          document.getElementById("expertise-management-text").innerHTML = "Social Media Man"
+        }, 350);
+        setTimeout(() => {
+          document.getElementById("expertise-management-text").innerHTML = "Social Media Mana"
+        }, 375);
+        setTimeout(() => {
+          document.getElementById("expertise-management-text").innerHTML = "Social Media Manag"
+        }, 400);
+        setTimeout(() => {
+          document.getElementById("expertise-management-text").innerHTML = "Social Media Manage"
+        }, 425);
+        setTimeout(() => {
+          document.getElementById("expertise-management-text").innerHTML = "Social Media Managem"
+        }, 450);
+        setTimeout(() => {
+          document.getElementById("expertise-management-text").innerHTML = "Social Media Manageme"
+        }, 475);
+        setTimeout(() => {
+          document.getElementById("expertise-management-text").innerHTML = "Social Media Managemen"
         }, 500);
-    }
-    else {
-        console.log("dropdown error")
-    }
+        setTimeout(() => {
+          document.getElementById("expertise-management-text").innerHTML = "Social Media Management"
+        }, 525);
+      }, 300);
+      /*insights*/
+      document.getElementById("expertise-insights").style.width = "240px"
+      setTimeout(() => {
+        setTimeout(() => {
+          document.getElementById("expertise-insights-text").innerHTML = "S"
+        }, 25);
+        setTimeout(() => {
+          document.getElementById("expertise-insights-text").innerHTML = "St"
+        }, 50);
+        setTimeout(() => {
+          document.getElementById("expertise-insights-text").innerHTML = "Str"
+        }, 75);
+        setTimeout(() => {
+          document.getElementById("expertise-insights-text").innerHTML = "Stra"
+        }, 100);
+        setTimeout(() => {
+          document.getElementById("expertise-insights-text").innerHTML = "Strat"
+        }, 125);
+        setTimeout(() => {
+          document.getElementById("expertise-insights-text").innerHTML = "Strate"
+        }, 150);
+        setTimeout(() => {
+          document.getElementById("expertise-insights-text").innerHTML = "Strateg"
+        }, 175);
+        setTimeout(() => {
+          document.getElementById("expertise-insights-text").innerHTML = "Strategy"
+        }, 200);
+        setTimeout(() => {
+          document.getElementById("expertise-insights-text").innerHTML = "Strategy &"
+        }, 225);
+        setTimeout(() => {
+          document.getElementById("expertise-insights-text").innerHTML = "Strategy & I"
+        }, 250);
+        setTimeout(() => {
+          document.getElementById("expertise-insights-text").innerHTML = "Strategy & In"
+        }, 275);
+        setTimeout(() => {
+          document.getElementById("expertise-insights-text").innerHTML = "Strategy & Ins"
+        }, 300);
+        setTimeout(() => {
+          document.getElementById("expertise-insights-text").innerHTML = "Strategy & Insi"
+        }, 325);
+        setTimeout(() => {
+          document.getElementById("expertise-insights-text").innerHTML = "Strategy & Insig"
+        }, 350);
+        setTimeout(() => {
+          document.getElementById("expertise-insights-text").innerHTML = "Strategy & Insigh"
+        }, 375);
+        setTimeout(() => {
+          document.getElementById("expertise-insights-text").innerHTML = "Strategy & Insight"
+        }, 400);
+      }, 300);
+      /*webdev*/
+      document.getElementById("expertise-webdev").style.width = "240px"
+      setTimeout(() => {
+        setTimeout(() => {
+          document.getElementById("expertise-webdev-text").innerHTML = "W"
+        }, 25);
+        setTimeout(() => {
+          document.getElementById("expertise-webdev-text").innerHTML = "We"
+        }, 50);
+        setTimeout(() => {
+          document.getElementById("expertise-webdev-text").innerHTML = "Web"
+        }, 75);
+        setTimeout(() => {
+          document.getElementById("expertise-webdev-text").innerHTML = "Web D"
+        }, 100);
+        setTimeout(() => {
+          document.getElementById("expertise-webdev-text").innerHTML = "Web De"
+        }, 125);
+        setTimeout(() => {
+          document.getElementById("expertise-webdev-text").innerHTML = "Web Dev"
+        }, 150);
+        setTimeout(() => {
+          document.getElementById("expertise-webdev-text").innerHTML = "Web Deve"
+        }, 175);
+        setTimeout(() => {
+          document.getElementById("expertise-webdev-text").innerHTML = "Web Devel"
+        }, 200);
+        setTimeout(() => {
+          document.getElementById("expertise-webdev-text").innerHTML = "Web Develo"
+        }, 225);
+        setTimeout(() => {
+          document.getElementById("expertise-webdev-text").innerHTML = "Web Develop"
+        }, 250);
+        setTimeout(() => {
+          document.getElementById("expertise-webdev-text").innerHTML = "Web Developm"
+        }, 275);
+        setTimeout(() => {
+          document.getElementById("expertise-webdev-text").innerHTML = "Web Developme"
+        }, 300);
+        setTimeout(() => {
+          document.getElementById("expertise-webdev-text").innerHTML = "Web Developmen"
+        }, 325);
+        setTimeout(() => {
+          document.getElementById("expertise-webdev-text").innerHTML = "Web Development"
+        }, 350);
+      }, 300);
+      /*design*/
+      document.getElementById("expertise-design").style.width = "130px"
+      setTimeout(() => {
+        setTimeout(() => {
+          document.getElementById("expertise-design-text").innerHTML = "D"
+        }, 25);
+        setTimeout(() => {
+          document.getElementById("expertise-design-text").innerHTML = "De"
+        }, 50);
+        setTimeout(() => {
+          document.getElementById("expertise-design-text").innerHTML = "Des"
+        }, 75);
+        setTimeout(() => {
+          document.getElementById("expertise-design-text").innerHTML = "Desi"
+        }, 100);
+        setTimeout(() => {
+          document.getElementById("expertise-design-text").innerHTML = "Desig"
+        }, 125);
+        setTimeout(() => {
+          document.getElementById("expertise-design-text").innerHTML = "Design"
+        }, 150);
+      }, 300);
+    }, 25);
+  }, 500);
 }
