@@ -1,0 +1,89 @@
+
+                {/*Packages: Discord*/}
+
+                    <div id="dcpackage-setup" class="packagesitem">
+                        <h2>Discord Setup</h2>
+                        <p>Setup package is the perfect starting point for businesses looking to get started with Discord. This budget-friendly package includes all the essentials for setting up and configuring a Discord server for your business.</p>
+                    </div>
+                    <div id="dcpackage-medium"  class="packagesitem">
+                        <h2>Discord Medium</h2>
+                        <p>Take your Discord marketing to the next level with our medium package. This comprehensive offering includes all the essentials from our setup package, plus additional features and capabilities to help you fully leverage the marketing potential of Discord.</p>
+                    </div>
+                    <div id="dcpackage-advanced"  class="packagesitem">
+                        <h2>Discord Advanced</h2>
+                        <p>Unlock the full potential of Discord marketing with our advanced package. This comprehensive offering includes all the features and capabilities of our medium package, plus advanced community management and automated systems to help you fully leverage the marketing potential of Discord.</p>
+                    </div>
+
+                {/*Packages: Web Development*/}
+
+                    <div id="web-setup"  class="packagesitem">
+                        <h2>Web Setup</h2>
+                        <p>Our Web Development - Setup package is the perfect starting point for businesses looking to get started with a professional website. This budget-friendly package includes all the essentials for setting up a basic website for your business.</p>
+                    </div>
+                    <div id="web-medium"  class="packagesitem">
+                        <h2>Web Medium</h2>
+                        <p>Take your web development to the next level with our medium package. This comprehensive offering includes all the essentials from our setup package, plus additional features and capabilities to help you fully leverage the potential of your website.</p>
+                    </div>
+                    <div id="web-advanced"  class="packagesitem">
+                        <h2>Web Advanced</h2>
+                        <p>Unlock the full potential of your website with our advanced package. This comprehensive offering includes all the features and capabilities of our medium package, plus advanced custom functionality and e-commerce integration to help you fully leverage the potential of your website.</p>
+                    </div>
+
+                {/*Packages: Strategy & Insights*/}
+
+                    <div id="strats-setup"  class="packagesitem">
+                        <h2>Strategy Setup</h2>
+                        <p>Our Strategy and Insights - Setup package is the perfect starting point for businesses looking to get started with data-driven decision making. This budget-friendly package includes all the essentials for developing a basic data strategy for your business.</p>
+                    </div>
+                    <div id="strats-medium"  class="packagesitem">
+                        <h2>Strategy Medium</h2>
+                        <p>Take your data strategy to the next level with our medium package. This comprehensive offering includes all the essentials from our setup package, plus additional features and capabilities to help you fully leverage the potential of data-driven decision making.</p>
+                    </div>
+                    <div id="strats-advanced"  class="packagesitem">
+                        <h2>Strategy Advanced</h2>
+                        <p>Unlock the full potential of data-driven decision making with our advanced package. This comprehensive offering includes all the features and capabilities of our medium package, plus advanced data analysis and insights and custom AI-powered optimization to help you fully leverage the potential of data-driven decision making.</p>
+                    </div>
+
+                {/*Packages: Social Media Advertising*/}
+
+                    <div id="ads-setup"  class="packagesitem">
+                        <h2>Ad Setup</h2>
+                        <p>Get started with social media advertising and reach new potential customers with our Setup tier. Includes initial consultation, ad account setup and optimization, customized ad strategy, ongoing campaign management, and monthly reporting.</p>
+                    </div>
+                    <div id="ads-medium"  class="packagesitem">
+                        <h2>Ad Medium</h2>
+                        <p>Take your social media advertising to the next level with our Medium tier. In addition to everything included in the Setup tier, you'll receive additional ad spend, advanced targeting options, and expert consultation to maximize the effectiveness of your campaigns. Plus, get access to our comprehensive analytics and reporting tools to track the success of your ads.</p>
+                    </div>
+                    <div id="ads-advanced"  class="packagesitem">
+                        <h2>Ad Advanced</h2>
+                        <p>Unleash the full potential of your social media advertising with our Advanced tier. In addition to everything included in the Setup and Medium tiers, you'll receive access to our full range of ad targeting and optimization tools, as well as in-depth consultation from our team of expert strategists. Our Advanced tier is perfect for businesses that are looking to drive significant growth through social media advertising and want the most comprehensive support available.</p>
+                    </div>
+
+                {/*Packages: Top text*/}
+
+                    <div class="packagetitle" id="packages-1row">
+                        <h1>
+                            Discord Marketing
+                        </h1>
+                    </div>
+                    <div class="packagetitle" id="packages-2row">
+                        <h1>
+                            Web Development
+                        </h1>
+                    </div>
+                    <div class="packagetitle" id="packages-3row">
+                        <h1 id="packages-3row">
+                            Strategy & Insights
+                        </h1>
+                    </div>
+                    <div class="packagetitle" id="packages-4row">
+                        <h1>
+                            Social Media Ads
+                        </h1>
+                    </div>
+
+                        {/*Packages: Lines*/}
+
+                        <div id="pline1"></div>
+                        <div id="pline2"></div>
+                        <div id="pline3"></div>

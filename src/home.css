@@ -6,9 +6,9 @@
 #vlwrapper {
     border-radius: 15px;
     width:100%;
-    height:3600px;
+    height:100%;
     background-color: var(--darkblue);
-    font-family: sans-serif; 
+    font-family: sans-serif;
 }
 
 
@@ -22,7 +22,7 @@
 
 
 /************************************************
-            [  Home page: Hamburger/nav menu  ]
+    [  Home page: Hamburger/nav menu  ]
 ************************************************/
 
 #nav-icon-wrap {
@@ -37,6 +37,7 @@
 }
 #nav-icon-wrap:hover {
     cursor: pointer;
+    opacity: 0.9;
 }
 #nav-icon-wrap span {
     position: relative;
@@ -45,6 +46,113 @@
     height:4px;
     width:30px;
     background-color: var(--orange)
+}
+
+/*nav menu*/
+
+#navmenu {
+    position: fixed;
+    right:0px;
+    width:100%;
+    height:100vh;
+    z-index: 5;
+    background-color: var(--darkblue);
+    visibility: hidden;
+}
+@keyframes navmenuopen {
+    0% {
+        right:-100vh;
+    }
+    100% {
+        right:0px;
+    }
+}
+@keyframes navmenuclose {
+    0% {
+        right:0px;
+    }
+    100% {
+        right:-200vh;
+    }
+}
+
+/*close nav menu*/
+
+
+#close-navmenu {
+    position: absolute;
+    width:50px;
+    height:50px;
+    right:0px;
+    display: flex;
+    justify-content: center;
+}
+#close-navmenu:hover {
+    cursor: pointer;
+    opacity: 0.9;
+}
+#close-navmenu-1 {
+    position: absolute;
+    transform: rotate(45deg);
+    background-color: var(--orange);
+    width:45px;
+    height:5px;
+    top:20px;
+}
+#close-navmenu-2 {
+    position: absolute;
+    transform: rotate(-45deg);
+    background-color: var(--orange);
+    width:45px;
+    height:5px;
+    top:20px;
+}
+
+/* nav menu content*/
+
+#logo-in-menu {
+    display: flex;
+    justify-content: center;
+    height:100px;
+}
+#logo-text-in-menu {
+    background-color: var(--lightblue);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width:300px;
+    height:50px;
+    font-size:36px;
+    border-radius: 15px;
+}
+#logo-menu-content {
+    display: flex;
+    width:100%;
+    height:100%;
+    justify-content: center;
+}
+#logo-menu-content h5 {
+    position: absolute;
+    font-size: 36px;
+    top:300px;
+    color: var(--lightblue);
+}
+#navmenu ul {
+    list-style: none;
+    padding:10px;
+    position: absolute;
+    top:90px;
+}
+#navmenu ul li {
+    background-color :#404a81bb;
+    padding:20px;
+    font-size:36px;
+    margin:20px;
+    border-radius: 15px;;
+}
+#navmenu ul li:hover {
+    cursor: pointer;
+    opacity: 0.8;
 }
 
 /************************************************
@@ -92,7 +200,7 @@
     top:60px;
     left:20px;
     font-size:19px;
-    width:50%;
+    width:45%;
     color:var(--orange)
 }
 .hgreen {
@@ -108,6 +216,7 @@
     position:absolute;
     width:100%;
     height:100px;
+    z-index:2;
 }
 
 /************************************************
@@ -128,7 +237,7 @@
     visibility: hidden;
 }
 #expertise-section h1 {
-    color: var(--darkblue);
+    color: var(--orange);
     margin-top:-5px;
 }
 #expertise-icon-wrap {
@@ -149,11 +258,15 @@
     height:50px;
     border-radius: 15px;
     width:50px;
+    top:80px;
+}
+#expertise-discord:hover {
+    cursor: pointer;
+    opacity: 0.8;
 }
 #expertise-discord-text {
     font-size:18px;
     margin-left:5px;
-
     position: absolute;
     left:60px;
 }
@@ -172,9 +285,13 @@
     padding:5px;
     height:50px;
     border-radius: 15px;
-    top:80px;
+    top:320px;
 
     width:50px;
+}
+#expertise-management:hover {
+    cursor: pointer;
+    opacity: 0.8;
 }
 #expertise-management-text {
     font-size:18px;
@@ -198,8 +315,11 @@
     height:50px;
     border-radius: 15px;
     top:160px;
-    width:50px;
-    
+    width:50px;  
+}
+#expertise-insights:hover {
+    cursor: pointer;
+    opacity: 0.8;
 }
 #expertise-insights-text {
     font-size:18px;
@@ -225,6 +345,10 @@
     top:240px;
     width:50px;
 }
+#expertise-webdev:hover {
+    cursor: pointer;
+    opacity: 0.8;
+}
 #expertise-webdev-text {
     font-size:18px;
     margin-left:5px;
@@ -246,8 +370,11 @@
     padding:5px;
     height:50px;
     border-radius: 15px;
-    top:320px;
     width:50px;
+}
+#expertise-design:hover {
+    cursor: pointer;
+    opacity: 0.8;
 }
 #expertise-design-text {
     font-size:18px;
@@ -259,6 +386,69 @@
     width:50px;
     height:50px;
 }
+
+/************************************************
+    [  Home page: package section  ]
+************************************************/
+
+#package-section {
+    background-color: var(--darkblue);
+    width:100%;
+    position: absolute;
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-top:120px;
+}
+#package-section-text {
+    color: var(--orange);
+    font-size:46px;
+    z-index:3;
+    text-align: center;
+}
+#packages-wrap {
+    width:100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/*package cards*/
+
+.package-section-cards {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    width:220px;
+    height:500px;
+    background-color: rgba(48, 132, 242, 0.6);
+    margin-bottom:30px;
+    padding:15px;
+    border-radius: 15px;
+}
+.package-section-cards:hover {
+    background-color: rgba(48, 132, 242, 1.0);
+}
+.package-section-cards h3 {
+    color: black;
+}
+.package-section-cards p {
+    height:380px;
+}
+.package-section-card-button {
+    padding:5px;
+    width:150px;
+    font-size:20px;
+    border-radius: 15px;
+    border:none;
+    background-color: var(--orange);
+}
+.package-section-card-button:hover {
+    cursor: pointer;
+    opacity: 0.8;
+}
+
+
 
 /************************************************
             [  MEDIA QUERIES: PC  ]
@@ -319,4 +509,93 @@
         font-size:40px;
         margin-top:-30px;
     }
+
+    /*design expertise*/
+
+    #expertise-design {
+        left:15px;
+        height:100px;
+        width:100px;
+    }
+    #expertise-design-text {
+        font-size:36px;
+        left:110px;
+    }
+    #expertise-design-image {
+        height:100px;
+        width:100px;
+    }
+    /*discord expertise*/
+    #expertise-discord {
+        left:300px;
+        height:100px;
+        width:100px;
+        top:0px;
+    }
+    #expertise-discord-text {
+        font-size:36px;
+        left:110px;
+    }
+    #expertise-discord-image {
+        height:100px;
+        width:100px;
+    }
+    /*strratinsight expertise*/
+    #expertise-insights {
+        left:600px;
+        height:100px;
+        width:100px;
+        top:0px;
+    }
+    #expertise-insights-text {
+        font-size:36px;
+        left:110px;
+    }
+    #expertise-insights-image {
+        height:100px;
+        width:100px;
+    }
+    /*webdev expertise*/
+    #expertise-webdev {
+        left:900px;
+        height:100px;
+        width:100px;
+        top:0px;
+    }
+    #expertise-webdev-text {
+        font-size:36px;
+        left:110px;
+    }
+    #expertise-webdev-image {
+        height:100px;
+        width:100px;
+    }
+    /*management expertise*/
+    #expertise-management {
+        left:15px;
+        height:100px;
+        width:100px;
+        top:150px;
+    }
+    #expertise-management-text {
+        font-size:36px;
+        left:120px;
+    }
+    #expertise-management-image {
+        height:100px;
+        width:100px;
+    }
+    /*packages*/
+    #package-section {
+        padding-top:300px;
+    }
+    #packages-wrap {
+        flex-direction: row;
+        justify-content: center;
+    }
+    .package-section-cards {
+        margin-right:25px;
+    }
+    
+
 }
