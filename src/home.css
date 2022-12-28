@@ -8,7 +8,7 @@
     width:100%;
     height:100%;
     background-color: var(--darkblue);
-    font-family: sans-serif;
+    font-family: 'Lato', sans-serif;
 }
 
 
@@ -16,8 +16,8 @@
             [  Home page  ]
 ************************************************/
 
-#homepage {
-    display: block;
+#Homepage {
+    display: block
 }
 
 
@@ -34,6 +34,8 @@
     display:flex;
     flex-direction: column;
     justify-content: center;
+    z-index: 3;
+    position: fixed;
 }
 #nav-icon-wrap:hover {
     cursor: pointer;
@@ -75,14 +77,45 @@
         right:-200vh;
     }
 }
+/************************************************
+            [  Nav menu: PC ]
+************************************************/
+
+#pc-view-navbar {
+    display:flex;
+    z-index: 3;
+    flex-direction: row-reverse;
+    position: fixed;
+    width:100%;
+    height:40px;
+    background: rgb(255,255,255);
+    background: linear-gradient(180deg, rgba(255,255,255,0.2) 0%, rgba(48,132,242,0.2) 100%);
+}
+#pc-view-navbar ul {
+    display:none;
+}
+#pc-view-navbar ul li:hover {
+    cursor: pointer;
+    color: var(--orange);
+}
+#pc-view-logo {
+    position:absolute;
+    width:70px;
+    height:80px;
+    left:-10px;
+    top:-20px;
+}
+#pc-view-logo:hover {
+    cursor: pointer;
+}
 
 /*close nav menu*/
 
 
 #close-navmenu {
     position: absolute;
-    width:50px;
-    height:50px;
+    width:35px;
+    height:35px;
     right:0px;
     display: flex;
     justify-content: center;
@@ -95,7 +128,7 @@
     position: absolute;
     transform: rotate(45deg);
     background-color: var(--orange);
-    width:45px;
+    width:30px;
     height:5px;
     top:20px;
 }
@@ -103,7 +136,7 @@
     position: absolute;
     transform: rotate(-45deg);
     background-color: var(--orange);
-    width:45px;
+    width:30px;
     height:5px;
     top:20px;
 }
@@ -176,7 +209,6 @@
     padding:8px;
     border-radius: 10px;
     font-size:22px;
-    border:2px solid black;
     left:15px;
     box-shadow: -1px -1px 1px 1px rgba(0,0,0,0.75) inset;
     -webkit-box-shadow: -1px -1px 1px 1px rgba(0,0,0,0.75) inset;
@@ -185,14 +217,16 @@
 }
 .herobuttons:hover {
     cursor: pointer;
-    opacity: 0.8;
     z-index: 2;
+    opacity: 0.8;
+    
 }
 #herobutton-getstarted {
-    background-color: var(--orange);
+    background-color: var(--lightblue);
+    visibility: hidden;
 }
 #herobutton-learnmore {
-    background-color: var(--lightgreen);
+    background-color: var(--lightblue);
     top:230px;
 }
 #hero-text {
@@ -201,10 +235,16 @@
     left:20px;
     font-size:19px;
     width:45%;
-    color:var(--orange)
+    color:white;
+}
+#hero-image-text-reach:hover {
+    color:var(--orange);
+}
+#hero-image-text-impact:hover {
+    color:var(--orange);
 }
 .hgreen {
-    color:var(--lightgreen)
+    color:var(--lightgreen);
 }
 
 
@@ -237,7 +277,7 @@
     visibility: hidden;
 }
 #expertise-section h1 {
-    color: var(--orange);
+    color: var(--lightblue);
     margin-top:-5px;
 }
 #expertise-icon-wrap {
@@ -363,7 +403,7 @@
 /* Design */
 
 #expertise-design {
-    background-color: var(--darkblue);
+    background-color: white;
     display: flex;
     position: absolute;
     margin:5px;
@@ -398,7 +438,7 @@
     display:flex;
     flex-direction: column;
     justify-content: center;
-    padding-top:120px;
+    padding-top:0px;
 }
 #package-section-text {
     color: var(--orange);
@@ -421,7 +461,7 @@
     flex-direction: column;
     width:220px;
     height:500px;
-    background-color: rgba(48, 132, 242, 0.6);
+    background-color: var(--lightblue);
     margin-bottom:30px;
     padding:15px;
     border-radius: 15px;
@@ -460,12 +500,47 @@
         width:80px;
         right:5px;
         top:5px;
+        display: none;
     }
     #nav-icon-wrap span {
         margin:4px;
         height:8px;
         width:70px;
     }
+
+    /*nav menu*/
+
+    #nav-icon-wralogop {
+        visibility: hidden;
+    }
+
+    /*nav menu:pc*/
+
+    #pc-view-navbar {
+        width:100%;
+        height:69px;
+    }
+    #pc-view-navbar ul {
+        display:flex;
+        margin-right:50px;
+    }
+    #pc-view-navbar ul li {
+        margin-right:30px;
+        font-size:26px;
+        list-style:none;
+        color:white;
+    }
+    #pc-view-navbar ul li:hover {
+        cursor: pointer;
+        color: var(--orange);
+    }
+    #pc-view-logo {
+        width:100px;
+        height:120px;
+        left:-5px;
+        top:-25px;
+    }
+    
 
     /*Hero image */
     #hero-text {
@@ -477,7 +552,6 @@
     }
     .herobuttons {
         padding:10px;
-        border-radius:15px;
         width:200px;
         height:60px;
         font-size:28px;
@@ -485,6 +559,7 @@
     #herobutton-getstarted {
         top:450px;
         left:30px;
+        visibility: visible;
     }
     #herobutton-learnmore {
         top:450px;
@@ -587,7 +662,7 @@
     }
     /*packages*/
     #package-section {
-        padding-top:300px;
+        padding-top:0px;
     }
     #packages-wrap {
         flex-direction: row;

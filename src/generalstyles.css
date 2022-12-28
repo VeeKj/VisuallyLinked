@@ -6,9 +6,9 @@ body {
     /* Color Variables */
     --background: #1A1826;
     --darkblue: #323859;
-    --lightblue: #3084F2;
+    --lightblue: #63C6EF;
     --lightgreen: #85D982;
-    --orange: #F2A766;
+    --orange: #f2a766;
     --heroimagebottom: #010108;
 
     /* Sizing */
@@ -48,4 +48,14 @@ html {
 }
 .general-darkblue {
     color: var(--darkblue)
+}
+
+
+/* navbar */
+
+#pc-view-navbar-home {
+    display:none;
+}
+#pc-view-navbar-services {
+    display:block;
 }

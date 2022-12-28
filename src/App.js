@@ -1,7 +1,7 @@
 import VL from "./VL"
 import "./generalstyles.css"
 import "./home.css"
-import "./mediaqueries.css"
+import "./services.css"
 function App() {
   return (
     <>
