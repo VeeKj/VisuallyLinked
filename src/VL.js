@@ -6,14 +6,23 @@ import React from 'react'
 ************************************************/
 
 window.addEventListener("load", (event) => {
+  screensizechecker()
   console.log("loaded");
-  setInterval(() => {
-    screensizechecker()
+  setTimeout(() => {
+    screensizecheckerwindowload()
   }, 5000);
   setTimeout(() => {
     expertisemediaqueries()
   }, 1000);
 });
+
+function screensizecheckerwindowload(){
+  setInterval(() => {
+    screensizechecker()
+  }, 1000);
+}
+
+let currenttab = "Home"
 
 
 /************************************************
@@ -25,6 +34,7 @@ export default function VL() {
   return (
     <>
       <div id="vlwrapper">
+        <div id="footer">test</div>
         <div id="pc-view-navbar">
           <img id="pc-view-logo" src={require("./vl_logo.png")} onClick={switchToHome} alt="vl-logo"></img>
           <ul>
@@ -96,22 +106,22 @@ export default function VL() {
             <div id="packages-wrap">
               <div className="package-section-cards" id="packages-discord">
                 <h3>Discord Marketing</h3>
-                <p>Our Discord marketing packages help you tap into the rapidly growing community on this popular communication platform. With over 100 million active users, Discord is a prime destination for building and engaging with a targeted audience. We'll work with you to create a custom strategy and manage your Discord presence, including server setup and moderation, content creation, and community building. Our team has the expertise to help you effectively promote your brand and build a thriving community on Discord.</p>
+                <p>Looking to promote your brand and build a thriving community on Discord? Our Discord marketing packages are here to help! Our team of experts will create a custom strategy and manage your Discord presence, including server setup, content creation, and community building. With our help, you can effectively reach and engage with your target audience on this popular platform. Don't miss out on the opportunity to grow your brand on Discord!</p>
                 <button className="package-section-card-button">Learn more</button>
               </div>
               <div className="package-section-cards" id="packages-webdev">
                 <h3>Web Development</h3>
-                <p>Our web development packages help you bring your online vision to life. We'll work with you to design and build a custom website that meets your specific needs and goals. Our team has expertise in a variety of web development technologies and platforms, including HTML, CSS, JavaScript, and popular content management systems like WordPress. Whether you need a simple brochure website or a complex e-commerce platform, we have the skills and experience to make it happen. Let us help you create a website that showcases your brand and drives business success.</p>
+                <p>Get a custom website that showcases your brand and drives business success with our web development packages. Our team has expertise in HTML, CSS, JavaScript, and popular CMS like WordPress. We'll work with you to design and build a website that meets your specific needs and goals, whether it's a simple brochure site or a complex e-commerce platform. Let us bring your online vision to life and help you succeed online.</p>
                 <button className="package-section-card-button">Learn more</button>
               </div>
               <div className="package-section-cards" id="packages-insights">
                 <h3>AI Powered Strategy</h3>
-                <p>Our AI-powered strategy and insights packages help you gain a deeper understanding of your business and make informed decisions. We'll use advanced artificial intelligence and machine learning techniques to analyze data from a variety of sources, including your website, social media platforms, and customer feedback. This analysis will provide valuable insights into your target audience, market trends, and key performance indicators. We'll work with you to develop a customized strategy based on these insights, helping you optimize your marketing efforts and drive business success.</p>
+                <p>Enhance your marketing efforts and drive business success with our AI-powered strategy and insights package. Advanced AI and machine learning help us analyze data from your website, social media, and customer feedback to provide valuable insights into your target audience, market trends, and key performance indicators. Based on these insights, we'll develop a customized strategy to help you make informed decisions and optimize your marketing efforts.</p>
                 <button className="package-section-card-button">Learn more</button>
               </div>
               <div className="package-section-cards" id="packages-socialmedia">
                 <h3>Social Media</h3>
-                <p>Our social media marketing packages help you effectively reach and engage with your target audience on popular platforms such as Facebook, Instagram, and TikTok. We'll work with you to develop a custom strategy that aligns with your business goals and target audience. Our team has expertise in creating and managing social media campaigns, including content creation, community management, and paid advertising. With our help, you'll be able to build a strong presence on social media and drive meaningful results for your business.</p>
+                <p>Build a strong presence on social media and drive meaningful results for your business with our social media marketing packages. Our team has expertise in creating and managing campaigns on platforms like Facebook, Instagram, and TikTok. We'll work with you to develop a custom strategy that aligns with your business goals and target audience, including content creation, community management, and paid advertising.</p>
                 <button className="package-section-card-button">Learn more</button>
               </div>
             </div>
@@ -149,6 +159,7 @@ export default function VL() {
           </div>
         </div>
       </div>
+     
     </>
   )
 }
@@ -234,6 +245,8 @@ function serviceDropdownINIT() {
 
 function switchToHome(){
   closenavmenu()
+  currenttab = "Home"
+  document.getElementById("footer").style.top = "2800px"
   document.getElementById("Homepage").style.display = "block"
   document.getElementById("servicespage").style.display = "none"
   document.getElementById("pc-view-navbar-home").style.display = "none"
@@ -244,6 +257,8 @@ function switchToHome(){
 
 function switchToServices() {
   closenavmenu()
+  currenttab = "Services"
+  document.getElementById("footer").style.top = "1450px"
   document.getElementById("pc-view-navbar-home").style.display = "block"
   document.getElementById("phone-view-navbutton-home").style.display = "block"
   document.getElementById("pc-view-navbar-services").style.display = "none"
@@ -298,26 +313,50 @@ function screensizechecker() {
     phoneviewchange()
   }
 }
+function pcviewchangeexpertise() {
+  document.getElementById("expertise-section").style.height = "400px"
+  document.getElementById("expertise-discord").style.width = "300px"
+  document.getElementById("expertise-insights").style.width = "300px"
+  document.getElementById("expertise-webdev").style.width = "500px"
+  document.getElementById("expertise-management").style.width = "610px"
+  document.getElementById("expertise-design").style.width = "300px"
+}
+
+function phoneviewchangeexpertise() {
+  document.getElementById("expertise-section").style.height = "500px"
+  document.getElementById("expertise-discord").style.width = "300px"
+  document.getElementById("expertise-management").style.width = "300px"
+  document.getElementById("expertise-insights").style.width = "300px"
+  document.getElementById("expertise-webdev").style.width = "300px"
+  document.getElementById("expertise-design").style.width = "300px"
+}
 
 function pcviewchange() {
-  document.getElementById("expertise-section").style.height = "400px"
-  document.getElementById("expertise-discord").style.width = "250px"
-  document.getElementById("expertise-insights").style.width = "260px"
-  document.getElementById("expertise-webdev").style.width = "440px"
-  document.getElementById("expertise-management").style.width = "600px"
-  document.getElementById("expertise-design").style.width = "240px"
+  if (currenttab === "Home") {
+    document.getElementById("footer").style.top = "1900px"
+  }
+  else if (currenttab === "Services") {
+    document.getElementById("footer").style.top = "1450px"
+
+  }
   document.getElementById("expertise-discord-text").innerHTML = "Discord"
   document.getElementById("expertise-insights-text").innerHTML = "Strategy"
+  setTimeout(() => {
+    pcviewchangeexpertise()
+  }, 2000);
 }
 function phoneviewchange() {
-  document.getElementById("expertise-section").style.height = "440px"
-  document.getElementById("expertise-discord").style.width = "240px"
-  document.getElementById("expertise-management").style.width = "290px"
-  document.getElementById("expertise-insights").style.width = "240px"
-  document.getElementById("expertise-webdev").style.width = "240px"
-  document.getElementById("expertise-design").style.width = "130px"
+  if (currenttab === "Home") {
+    document.getElementById("footer").style.top = "2800px"
+  }
+  else if(currenttab === "Services") {
+    document.getElementById("footer").style.top = "1500px"
+  }
   document.getElementById("expertise-discord-text").innerHTML = "Discord Marketing"
   document.getElementById("expertise-insights-text").innerHTML = "Strategy & Insights"
+  setTimeout(() => {
+    phoneviewchangeexpertise()
+  }, 2000);
 }
 
 /************************************************
@@ -325,7 +364,7 @@ function phoneviewchange() {
 ************************************************/
 
 function expandexpertisephone() {
-  document.getElementById("expertise-section").style.height = "440px"
+  document.getElementById("expertise-section").style.height = "500px"
   setTimeout(() => {
     document.getElementById("expertise-hide-content").style.visibility = "visible"
 
@@ -336,7 +375,7 @@ function expandexpertisephone() {
     /*Expanding */
     setTimeout(() => {
       /* Discord */
-      document.getElementById("expertise-discord").style.width = "240px"
+      document.getElementById("expertise-discord").style.width = "300px"
       setTimeout(() => {
         setTimeout(() => {
           document.getElementById("expertise-discord-text").innerHTML = "D"
@@ -388,7 +427,7 @@ function expandexpertisephone() {
         }, 400);
       }, 300);
       /* Management */
-      document.getElementById("expertise-management").style.width = "290px"
+      document.getElementById("expertise-management").style.width = "300px"
       setTimeout(() => {
         setTimeout(() => {
           document.getElementById("expertise-management-text").innerHTML = "S"
@@ -455,7 +494,7 @@ function expandexpertisephone() {
         }, 525);
       }, 300);
       /*insights*/
-      document.getElementById("expertise-insights").style.width = "240px"
+      document.getElementById("expertise-insights").style.width = "300px"
       setTimeout(() => {
         setTimeout(() => {
           document.getElementById("expertise-insights-text").innerHTML = "S"
@@ -507,7 +546,7 @@ function expandexpertisephone() {
         }, 400);
       }, 300);
       /*webdev*/
-      document.getElementById("expertise-webdev").style.width = "240px"
+      document.getElementById("expertise-webdev").style.width = "300px"
       setTimeout(() => {
         setTimeout(() => {
           document.getElementById("expertise-webdev-text").innerHTML = "W"
@@ -553,7 +592,7 @@ function expandexpertisephone() {
         }, 350);
       }, 300);
       /*design*/
-      document.getElementById("expertise-design").style.width = "130px"
+      document.getElementById("expertise-design").style.width = "300px"
       setTimeout(() => {
         setTimeout(() => {
           document.getElementById("expertise-design-text").innerHTML = "D"
@@ -588,7 +627,7 @@ function expandexpertisepc() {
     emptyexpertisehtml()
     setTimeout(() => {
       /*design*/
-      document.getElementById("expertise-design").style.width = "240px"
+      document.getElementById("expertise-design").style.width = "300px"
       setTimeout(() => {
         setTimeout(() => {
           document.getElementById("expertise-design-text").innerHTML = "D"
@@ -609,7 +648,7 @@ function expandexpertisepc() {
           document.getElementById("expertise-design-text").innerHTML = "Design"
         }, 150);
       }, 300);
-      document.getElementById("expertise-discord").style.width = "250px"
+      document.getElementById("expertise-discord").style.width = "300px"
       setTimeout(() => {
         setTimeout(() => {
           document.getElementById("expertise-discord-text").innerHTML = "D"
@@ -633,7 +672,7 @@ function expandexpertisepc() {
           document.getElementById("expertise-discord-text").innerHTML = "Discord"
         }, 175);
       }, 300);
-      document.getElementById("expertise-insights").style.width = "260px"
+      document.getElementById("expertise-insights").style.width = "300px"
       setTimeout(() => {
         setTimeout(() => {
           document.getElementById("expertise-insights-text").innerHTML = "S"
@@ -660,7 +699,7 @@ function expandexpertisepc() {
           document.getElementById("expertise-insights-text").innerHTML = "Strategy"
         }, 200);
       }, 300);
-      document.getElementById("expertise-webdev").style.width = "440px"
+      document.getElementById("expertise-webdev").style.width = "500px"
       setTimeout(() => {
         setTimeout(() => {
           document.getElementById("expertise-webdev-text").innerHTML = "W"
@@ -705,7 +744,7 @@ function expandexpertisepc() {
           document.getElementById("expertise-webdev-text").innerHTML = "Web Development"
         }, 350);
       }, 300);
-      document.getElementById("expertise-management").style.width = "600px"
+      document.getElementById("expertise-management").style.width = "610px"
       setTimeout(() => {
         setTimeout(() => {
           document.getElementById("expertise-management-text").innerHTML = "S"

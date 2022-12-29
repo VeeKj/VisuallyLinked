@@ -10,6 +10,7 @@ body {
     --lightgreen: #85D982;
     --orange: #f2a766;
     --heroimagebottom: #010108;
+    --lightblueopacity: rgba(99, 198, 239, 0.15);
 
     /* Sizing */
     margin:0;
