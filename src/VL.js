@@ -16,8 +16,6 @@ window.addEventListener("load", (event) => {
 });
 
 
-
-
 /************************************************
             [  Main  ]
 ************************************************/
@@ -30,7 +28,7 @@ export default function VL() {
         <div id="pc-view-navbar">
           <img id="pc-view-logo" src={require("./vl_logo.png")} onClick={switchToHome} alt="vl-logo"></img>
           <ul>
-            <li id="pc-view-navbar-home" onClick = {switchToHome}>HOME</li>
+            <li id="pc-view-navbar-home" onClick={switchToHome}>HOME</li>
             <li id="pc-view-navbar-services" onClick={switchToServices}>SERVICES</li>
             <li id="pc-view-navbar-aboutus">ABOUT US</li>
           </ul>
@@ -45,10 +43,11 @@ export default function VL() {
           </div>
           <div id="logo-menu-content">
             <ul>
-              <li onClick={switchToServices}>Services</li>
+              <li id="phone-view-navbutton-home" onClick={switchToHome}>Home</li>
+              <li id="phone-view-navbutton-services" onClick={switchToServices}>Services</li>
               <li>About us</li>
             </ul>
-            <h5>Social Media</h5>
+            <h5>wip</h5>
           </div>
         </div>
         <div id="nav-icon-wrap" onClick={opennavmenu}>
@@ -118,18 +117,115 @@ export default function VL() {
             </div>
           </div>
         </div>
-        <div id = "servicespage">
-          <div id = "service-gui">
-            <div id = "service-gui-content-wrapper">
-              <div id = "service-gui-dropdown">
+        <div id="servicespage">
+          <div id="service-gui">
+            <div id="service-gui-content-wrapper">
+              <div id="services-dropdown-wrapper">
+                <button id="servicesdropButton" onClick={servicesDropdown}>Select Services</button>
+                <div id="services-dropdown" className="services-dropdown-content">
+                  <ul id="services-dropdown-ul">
+                    <li onClick={serviceDropdownDiscord}>Discord Packages</li>
+                    <li onClick={serviceDropdownWebDev}>Web Packages</li>
+                    <li onClick={serviceDropdownStrategy}>Strategy Packages</li>
+                    <li onClick={serviceDropdownSocialMedia} >Social Media Packages</li>
+                  </ul>
+                </div>
+              </div>
+              <div id="services-packagetierwrapper">
+                <h1 id="selected-package-text" alt="h1e">Select a package</h1>
+                <div className="services-package-tier-cards" id="services-packagetierone">
+                  <h5 className="services-package-tier-card-text" id="services-packagetierone-text">Tier 1</h5>
+                </div>
+                <div className="services-package-tier-cards" id="services-packagetiertwo">
+                  <h5 className="services-package-tier-card-text" id="services-packagetiertwo-text">Tier 2</h5>
+                </div>
+                <div className="services-package-tier-cards" id="services-packagetierthree">
+                  <h5 className="services-package-tier-card-text" id="services-packagetierthree-text">Tier 3</h5>
+                </div>
 
               </div>
+              <button id="servicepage-customize-button">Customize</button>
             </div>
           </div>
         </div>
       </div>
     </>
   )
+}
+/************************************************
+        [  Services page: Dropdown menu  ]
+************************************************/
+let servicesDropdownOpen = false
+function servicesDropdown() {
+  if (servicesDropdownOpen === false) {
+        document.getElementById("services-dropdown").style.border = "1px solid black"
+        document.getElementById("services-dropdown").style.height = "0px"
+        document.getElementById("services-dropdown").style.display = "block"
+        document.getElementById("services-dropdown").style.transitionDuration = "0.4s"
+        document.getElementById("services-dropdown").style.height = "220px"
+        document.getElementById("servicesdropButton").style.borderRadius = "15px 15px 0px 0px"
+        
+        setTimeout(() => {
+          /*document.getElementById("services-dropdown-ul").style.display = "block"*/
+        }, 400);
+    servicesDropdownOpen = true
+  } else {
+    document.getElementById("services-dropdown").style.height = "0px"
+    /*document.getElementById("services-dropdown-ul").style.display = "none"*/
+    document.getElementById("services-dropdown").style.transitionDuration = "0.4s"
+    setTimeout(() => {
+      document.getElementById("services-dropdown").style.transitionDuration = "0.0s"
+      document.getElementById("servicesdropButton").style.borderRadius = "15px 15px 15px 15px"
+      document.getElementById("services-dropdown").style.display = "none"
+    }, 250);
+    servicesDropdownOpen = false
+  }
+}
+
+/* Services: dropdownn selected service */
+
+/*vars*/
+var SelectedDropdownService = "none"
+console.log("SelectedDropdownService: " + SelectedDropdownService);
+
+/* service dropdown selection functions */
+function serviceDropdownDiscord() {
+  SelectedDropdownService = "Discord Packages"
+  serviceDropdownINIT()
+  document.getElementById("services-packagetierone-text").innerHTML = "Discord Simple"
+  document.getElementById("services-packagetiertwo-text").innerHTML = "Discord Medium"
+  document.getElementById("services-packagetierthree-text").innerHTML = "Discord Advanced"
+}
+function serviceDropdownWebDev() {
+  SelectedDropdownService = "Web Packages"
+  serviceDropdownINIT()
+  document.getElementById("services-packagetierone-text").innerHTML = "Web Simple"
+  document.getElementById("services-packagetiertwo-text").innerHTML = "Web Medium"
+  document.getElementById("services-packagetierthree-text").innerHTML = "Web Advanced"
+}
+function serviceDropdownStrategy() {
+  SelectedDropdownService = "Strategy Packages"
+  serviceDropdownINIT()
+  document.getElementById("services-packagetierone-text").innerHTML = "Strategy Simple"
+  document.getElementById("services-packagetiertwo-text").innerHTML = "Strategy Medium"
+  document.getElementById("services-packagetierthree-text").innerHTML = "Strategy Advanced"
+}
+function serviceDropdownSocialMedia() {
+  SelectedDropdownService = "Social Media Packages"
+  serviceDropdownINIT()
+  document.getElementById("services-packagetierone-text").innerHTML = "Social Media Simple"
+  document.getElementById("services-packagetiertwo-text").innerHTML = "Social Media Medium"
+  document.getElementById("services-packagetierthree-text").innerHTML = "Social Media Advanced"
+}
+
+/*general functionality dropdown */
+
+function serviceDropdownINIT() {
+  servicesDropdown()
+  document.getElementById("selected-package-text").innerHTML = SelectedDropdownService
+  console.log("SelectedDropdownService: " + SelectedDropdownService);
+  document.getElementById("servicesdropButton").innerHTML = SelectedDropdownService
+
 }
 
 /************************************************
@@ -141,13 +237,17 @@ function switchToHome(){
   document.getElementById("Homepage").style.display = "block"
   document.getElementById("servicespage").style.display = "none"
   document.getElementById("pc-view-navbar-home").style.display = "none"
+  document.getElementById("phone-view-navbutton-home").style.display = "none"
   document.getElementById("pc-view-navbar-services").style.display = "block"
+  document.getElementById("phone-view-navbutton-services").style.display = "block"
 }
 
 function switchToServices() {
   closenavmenu()
   document.getElementById("pc-view-navbar-home").style.display = "block"
+  document.getElementById("phone-view-navbutton-home").style.display = "block"
   document.getElementById("pc-view-navbar-services").style.display = "none"
+  document.getElementById("phone-view-navbutton-services").style.display = "none"
   document.getElementById("Homepage").style.display = "none"
   document.getElementById("servicespage").style.display = "flex"
 

@@ -167,9 +167,19 @@
 #logo-menu-content h5 {
     position: absolute;
     font-size: 36px;
-    top:300px;
+    top:400px;
     color: var(--lightblue);
 }
+#logo-menu-content ul li {
+    text-align: center;
+    font-size: 36px;
+    color: var(--lightblue);
+    margin: 20px;
+}
+#phone-view-navbutton-home {
+    display: none;
+}
+
 #navmenu ul {
     list-style: none;
     padding:10px;
@@ -541,11 +551,14 @@
         top:-25px;
     }
     
+    
 
     /*Hero image */
     #hero-text {
         top:240px;
+        left:50px;
         font-size:36px;
+        width: 30%;
     }
     #heroimage-container {
         height:800px;
@@ -558,12 +571,12 @@
     }
     #herobutton-getstarted {
         top:450px;
-        left:30px;
+        left:50px;
         visibility: visible;
     }
     #herobutton-learnmore {
         top:450px;
-        left:260px;
+        left:300px;
     }
     #bgimage-container {
         height:800px;

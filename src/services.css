@@ -9,26 +9,134 @@
     align-items: center;
     position: absolute;
     width:100%;
-    height:100%;
+    height:2000px;
     background: rgb(1,1,8);
     background: linear-gradient(320deg, rgba(1,1,8,1) 0%, rgba(1,1,8,1) 43%, rgba(48,132,242,1) 100%);
 }
 #service-gui {
     width:90%;
-    height:85%;
+    height:90%;
 }
 #service-gui-content-wrapper {
     width:100%;
     height:100%;
     background-color: var(--darkblue);
     border-radius: 15px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
 }
-#service-gui-dropdown {
+
+/*dropdown*/
+
+#services-dropdown-wrapper {
+    text-align: center;
+    list-style: none;
+    padding: 10px;
+    margin-top:10px;
+    width:240px;
+    height:250px;
     position: relative;
-    top:15px;
-    left:15px;
+    background-color: var(--darkblue);
+    z-index:2;
+    
+}
+#servicesdropButton {
+    background-color: var(--darkblue);
+    color: var(--lightblue);
+    width:242px;
+    font-size: 18px;
+    font-weight: 600;
+    padding: 10px 20px;
+    border-radius: 15px 15px 15px 15px;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    border: 1px solid black;
+    outline: none;
+}
+#servicesdropButton:hover {
     background-color: var(--lightblue);
-    width:250px;
-    height:50px;
+    color: var(--darkblue);
+}
+#services-dropdown {
+    display: flex;
+    height:0px; /*js*/
+    position: absolute;
+    border: none;
+    min-width: 240px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+    border-bottom-right-radius: 15px;
+    border-bottom-left-radius: 15px;
+    overflow: hidden;
+    transition-duration:0.4s;
+}
+#services-dropdown-ul {
+    list-style: none;
+    padding: 0;
+}
+#services-dropdown ul li {
+    color: var(--lightblue);
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: 600;
+    margin-top:20px;
+    padding:5px;
+    border-radius: 10px;
+    transition: all 0.3s ease;
+}
+#services-dropdown ul li:hover {
+    background-color: var(--lightblue);
+    color: var(--darkblue);
+    padding:10px;
+    cursor: pointer;
+}
+
+/************************************************
+            [  Services page: package tiers ]
+************************************************/
+
+#services-packagetierwrapper {
+    width:100%;
+    height:100%;
+    position: relative;
+    padding-top:20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.services-package-tier-cards {
+    border: 1px solid var(--orange);
     border-radius: 15px;
+    height:33%;
+    width:90%;
+    margin:20px;
+    display: flex;
+    justify-content: center;
+}
+#selected-package-text {
+    padding:10px;
+    font-size:30px;
+    color:var(--lightblue)
+}
+.services-package-tier-card-text {
+    margin-top:10px;
+    font-size:20px;
+    color:var(--lightblue)
+}
+
+/*customize*/
+
+#servicepage-customize-button {
+    border:none;
+    font-size:26px;
+    font-weight: 600;
+    border-radius: 5px;
+    background-color: var(--orange);
+    margin:15px;
+}
+#servicepage-customize-button:hover {
+    background-color: var(--lightblue);
+    color: var(--darkblue);
+    cursor: pointer;
 }
