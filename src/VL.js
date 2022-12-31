@@ -6,21 +6,12 @@ import React from 'react'
 ************************************************/
 
 window.addEventListener("load", (event) => {
-  screensizechecker()
-  console.log("loaded");
-  setTimeout(() => {
-    screensizecheckerwindowload()
-  }, 5000);
   setTimeout(() => {
     expertisemediaqueries()
   }, 1000);
 });
 
-function screensizecheckerwindowload(){
-  setInterval(() => {
-    screensizechecker()
-  }, 1000);
-}
+
 
 let currenttab = "Home"
 
@@ -57,7 +48,7 @@ export default function VL() {
               <li id="phone-view-navbutton-services" onClick={switchToServices}>Services</li>
               <li>About us</li>
             </ul>
-            <h5>wip</h5>
+            <button id="phone-view-navmenu-button">Contact Us</button>
           </div>
         </div>
         <div id="nav-icon-wrap" onClick={opennavmenu}>
@@ -274,13 +265,15 @@ function switchToServices() {
 
 function opennavmenu() {
   document.getElementById("navmenu").style.visibility = "visible"
-  document.getElementById("navmenu").style.animation = "navmenuopen 0.3s linear"
+  document.getElementById("navmenu").style.animation = "navmenuopen 0.4s linear"
+  document.getElementById("navmenu").style.right = "0px"
 }
 function closenavmenu() {
-  document.getElementById("navmenu").style.animation = "navmenuclose 0.3s linear"
+  document.getElementById("navmenu").style.animation = "navmenuclose 0.4s linear"
+  document.getElementById("navmenu").style.right = "-200vh"
   setTimeout(() => {
     document.getElementById("navmenu").style.visibility = "hidden"
-  }, 300);
+  }, 400);
 }
 
 /************************************************
@@ -542,7 +535,7 @@ function expandexpertisephone() {
           document.getElementById("expertise-insights-text").innerHTML = "Strategy & Insigh"
         }, 375);
         setTimeout(() => {
-          document.getElementById("expertise-insights-text").innerHTML = "Strategy & Insight"
+          document.getElementById("expertise-insights-text").innerHTML = "Strategy & Insights"
         }, 400);
       }, 300);
       /*webdev*/
@@ -824,12 +817,14 @@ function expandexpertisepc() {
 var windowsize = window.matchMedia("(min-width:700px)")
 function expertisemediaqueries() {
   if (windowsize.matches) {
-    console.log("pc")
     expandexpertisepc()
   }
   else {
     expandexpertisephone()
   }
+  setInterval(() => {
+    screensizechecker()
+  }, 5000);
 
 }
-console.log("endofpage")
+console.log("bughunter joe has approved this script")

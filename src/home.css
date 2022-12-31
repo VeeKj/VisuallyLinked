@@ -163,12 +163,6 @@
     height:100%;
     justify-content: center;
 }
-#logo-menu-content h5 {
-    position: absolute;
-    font-size: 36px;
-    top:400px;
-    color: var(--lightblue);
-}
 #logo-menu-content ul li {
     text-align: center;
     font-size: 36px;
@@ -177,6 +171,17 @@
 }
 #phone-view-navbutton-home {
     display: none;
+}
+#phone-view-navmenu-button {
+    position: absolute;
+    top:400px;
+    font-size:24px;
+    font-weight:500;
+    background-color: var(--orange);
+    width:180px;
+    height:40px;
+    border: none;
+    border-radius: 20px;
 }
 
 #navmenu ul {
