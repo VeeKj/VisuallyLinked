@@ -25,7 +25,18 @@ export default function VL() {
   return (
     <>
       <div id="vlwrapper">
-        <div id="footer">test</div>
+        <div id="footer">
+          <div id="footer-content">
+            <img id="footer-logo" src={require("./vl_logo.png")} alt="vl-logo"></img>
+            <img id="footer-emailcontact-image" src={require("./emailcontacticon.png")} alt="emailcontact"></img>
+            <p id="footer-emailtext">info@visuallylinked.com</p>
+            <div id = "footer-bottom-section">
+              <p>About<span>|</span></p>
+              <p>Terms of Service<span>|</span></p>
+              <p>Private Policy</p>
+            </div>
+          </div>
+        </div>
         <div id="pc-view-navbar">
           <img id="pc-view-logo" src={require("./vl_logo.png")} onClick={switchToHome} alt="vl-logo"></img>
           <ul>
@@ -40,13 +51,24 @@ export default function VL() {
             <div id="close-navmenu-2"></div>
           </div>
           <div id="logo-in-menu">
-            <p id="logo-text-in-menu"><span className="general-orange">Visually</span><span className="general-darkblue">Linked</span></p>
+            <img id="logo-in-menu-image" src={require("./vl_logo.png")} alt="vl-logo"></img>
+            <p id="logo-text-in-menu">Visually Linked</p>
           </div>
           <div id="logo-menu-content">
             <ul>
               <li id="phone-view-navbutton-home" onClick={switchToHome}>Home</li>
-              <li id="phone-view-navbutton-services" onClick={switchToServices}>Services</li>
-              <li>About us</li>
+              <hr id="logo-menu-content-hr"/>
+              <li id="phone-view-navbutton-services"><p onClick={switchToServices}>Services</p><span id="phone-view-navbutton-services-triangle" onClick={phoneNavMenuServicesTriangle}></span>
+              <div id= "phone-view-navbutton-services-sublist">
+                <div className="phone-view-navbutton-services-sublist-items" onClick={() => { switchToServices(); serviceDropdownWebDev();}}>Web Development</div>
+                <div className="phone-view-navbutton-services-sublist-items" onClick={() => { switchToServices(); serviceDropdownDiscord();}}>Discord Marketing</div>
+                <div className="phone-view-navbutton-services-sublist-items" onClick={() => { switchToServices(); serviceDropdownStrategy();}}>AI Powered Strategy</div>
+                <div className="phone-view-navbutton-services-sublist-items" onClick={() => { switchToServices(); serviceDropdownSocialMedia();}}>Social Media</div>
+              </div>
+              </li>
+              <hr id="logo-menu-content-hr"/>
+              <li id="phone-view-navbutton-aboutus">About us</li>
+              <hr id="logo-menu-content-hr"/>
             </ul>
             <button id="phone-view-navmenu-button">Contact Us</button>
           </div>
@@ -98,22 +120,22 @@ export default function VL() {
               <div className="package-section-cards" id="packages-discord">
                 <h3>Discord Marketing</h3>
                 <p>Looking to promote your brand and build a thriving community on Discord? Our Discord marketing packages are here to help! Our team of experts will create a custom strategy and manage your Discord presence, including server setup, content creation, and community building. With our help, you can effectively reach and engage with your target audience on this popular platform. Don't miss out on the opportunity to grow your brand on Discord!</p>
-                <button className="package-section-card-button">Learn more</button>
+                <button className="package-section-card-button" onClick={() => { switchToServices(); serviceDropdownDiscord();}}>Learn more</button>
               </div>
               <div className="package-section-cards" id="packages-webdev">
                 <h3>Web Development</h3>
                 <p>Get a custom website that showcases your brand and drives business success with our web development packages. Our team has expertise in HTML, CSS, JavaScript, and popular CMS like WordPress. We'll work with you to design and build a website that meets your specific needs and goals, whether it's a simple brochure site or a complex e-commerce platform. Let us bring your online vision to life and help you succeed online.</p>
-                <button className="package-section-card-button">Learn more</button>
+                <button className="package-section-card-button" onClick={() => { switchToServices(); serviceDropdownWebDev();}}>Learn more</button>
               </div>
               <div className="package-section-cards" id="packages-insights">
                 <h3>AI Powered Strategy</h3>
                 <p>Enhance your marketing efforts and drive business success with our AI-powered strategy and insights package. Advanced AI and machine learning help us analyze data from your website, social media, and customer feedback to provide valuable insights into your target audience, market trends, and key performance indicators. Based on these insights, we'll develop a customized strategy to help you make informed decisions and optimize your marketing efforts.</p>
-                <button className="package-section-card-button">Learn more</button>
+                <button className="package-section-card-button" onClick={() => { switchToServices(); serviceDropdownStrategy();}}>Learn more</button>
               </div>
               <div className="package-section-cards" id="packages-socialmedia">
                 <h3>Social Media</h3>
                 <p>Build a strong presence on social media and drive meaningful results for your business with our social media marketing packages. Our team has expertise in creating and managing campaigns on platforms like Facebook, Instagram, and TikTok. We'll work with you to develop a custom strategy that aligns with your business goals and target audience, including content creation, community management, and paid advertising.</p>
-                <button className="package-section-card-button">Learn more</button>
+                <button className="package-section-card-button" onClick={() => { switchToServices(); serviceDropdownSocialMedia();}}>Learn more</button>
               </div>
             </div>
           </div>
@@ -194,6 +216,7 @@ console.log("SelectedDropdownService: " + SelectedDropdownService);
 function serviceDropdownDiscord() {
   SelectedDropdownService = "Discord Packages"
   serviceDropdownINIT()
+  closenavmenu()
   document.getElementById("services-packagetierone-text").innerHTML = "Discord Simple"
   document.getElementById("services-packagetiertwo-text").innerHTML = "Discord Medium"
   document.getElementById("services-packagetierthree-text").innerHTML = "Discord Advanced"
@@ -201,6 +224,7 @@ function serviceDropdownDiscord() {
 function serviceDropdownWebDev() {
   SelectedDropdownService = "Web Packages"
   serviceDropdownINIT()
+  closenavmenu()
   document.getElementById("services-packagetierone-text").innerHTML = "Web Simple"
   document.getElementById("services-packagetiertwo-text").innerHTML = "Web Medium"
   document.getElementById("services-packagetierthree-text").innerHTML = "Web Advanced"
@@ -208,6 +232,7 @@ function serviceDropdownWebDev() {
 function serviceDropdownStrategy() {
   SelectedDropdownService = "Strategy Packages"
   serviceDropdownINIT()
+  closenavmenu()
   document.getElementById("services-packagetierone-text").innerHTML = "Strategy Simple"
   document.getElementById("services-packagetiertwo-text").innerHTML = "Strategy Medium"
   document.getElementById("services-packagetierthree-text").innerHTML = "Strategy Advanced"
@@ -215,6 +240,7 @@ function serviceDropdownStrategy() {
 function serviceDropdownSocialMedia() {
   SelectedDropdownService = "Social Media Packages"
   serviceDropdownINIT()
+  closenavmenu()
   document.getElementById("services-packagetierone-text").innerHTML = "Social Media Simple"
   document.getElementById("services-packagetiertwo-text").innerHTML = "Social Media Medium"
   document.getElementById("services-packagetierthree-text").innerHTML = "Social Media Advanced"
@@ -236,27 +262,37 @@ function serviceDropdownINIT() {
 
 function switchToHome(){
   closenavmenu()
+  ScrollToTop()
+  screensizechecker()
   currenttab = "Home"
   document.getElementById("footer").style.top = "2800px"
   document.getElementById("Homepage").style.display = "block"
   document.getElementById("servicespage").style.display = "none"
   document.getElementById("pc-view-navbar-home").style.display = "none"
-  document.getElementById("phone-view-navbutton-home").style.display = "none"
+  /*document.getElementById("phone-view-navbutton-home").style.display = "none"*/
   document.getElementById("pc-view-navbar-services").style.display = "block"
-  document.getElementById("phone-view-navbutton-services").style.display = "block"
+  /*document.getElementById("phone-view-navbutton-services").style.display = "block"*/
 }
 
 function switchToServices() {
   closenavmenu()
+  ScrollToTop()
+  screensizechecker()
   currenttab = "Services"
-  document.getElementById("footer").style.top = "1450px"
+  document.getElementById("footer").style.top = "1500px"
   document.getElementById("pc-view-navbar-home").style.display = "block"
-  document.getElementById("phone-view-navbutton-home").style.display = "block"
+  /*document.getElementById("phone-view-navbutton-home").style.display = "block"*/
   document.getElementById("pc-view-navbar-services").style.display = "none"
-  document.getElementById("phone-view-navbutton-services").style.display = "none"
+  /*document.getElementById("phone-view-navbutton-services").style.display = "none"*/
   document.getElementById("Homepage").style.display = "none"
   document.getElementById("servicespage").style.display = "flex"
 
+}
+
+/* Scroll to top func */
+
+function ScrollToTop() {
+  window.scrollTo(0, 0)
 }
 
 /************************************************
@@ -274,6 +310,26 @@ function closenavmenu() {
   setTimeout(() => {
     document.getElementById("navmenu").style.visibility = "hidden"
   }, 400);
+}
+
+
+/*triangle animation*/
+
+let phoneNavMenuServicesTriangleOpen = false
+function phoneNavMenuServicesTriangle() {
+  if (phoneNavMenuServicesTriangleOpen === false) {
+    phoneNavMenuServicesTriangleOpen = true
+    document.getElementById("phone-view-navbutton-services-triangle").style.transform = "rotate(0deg)"
+    document.getElementById("phone-view-navbutton-services").style.height = "200px"
+    document.getElementById("phone-view-navbutton-services-sublist").style.visibility = "visible"
+  }
+  else {
+    phoneNavMenuServicesTriangleOpen = false
+    document.getElementById("phone-view-navbutton-services-triangle").style.transform = "rotate(180deg)"
+    document.getElementById("phone-view-navbutton-services").style.height = "40px"
+    document.getElementById("phone-view-navbutton-services-sublist").style.visibility = "hidden"
+  }
+
 }
 
 /************************************************
@@ -329,8 +385,7 @@ function pcviewchange() {
     document.getElementById("footer").style.top = "1900px"
   }
   else if (currenttab === "Services") {
-    document.getElementById("footer").style.top = "1450px"
-
+    document.getElementById("footer").style.top = "1500px"
   }
   document.getElementById("expertise-discord-text").innerHTML = "Discord"
   document.getElementById("expertise-insights-text").innerHTML = "Strategy"

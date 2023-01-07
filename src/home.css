@@ -49,33 +49,8 @@
     background-color: var(--orange)
 }
 
-/*nav menu*/
 
-#navmenu {
-    position: fixed;
-    right:0px;
-    width:100%;
-    height:100vh;
-    z-index: 5;
-    background-color: var(--darkblue);
-    visibility: hidden;
-}
-@keyframes navmenuopen {
-    0% {
-        right:-100vh;
-    }
-    100% {
-        right:0px;
-    }
-}
-@keyframes navmenuclose {
-    0% {
-        right:0px;
-    }
-    100% {
-        right:-200vh;
-    }
-}
+
 /************************************************
             [  Nav menu: PC ]
 ************************************************/
@@ -108,7 +83,9 @@
     cursor: pointer;
 }
 
-/*close nav menu*/
+/************************************************
+            [  Nav menu: Phone only? ]
+************************************************/
 
 
 #close-navmenu {
@@ -118,6 +95,7 @@
     right:0px;
     display: flex;
     justify-content: center;
+    z-index:5;
 }
 #close-navmenu:hover {
     cursor: pointer;
@@ -142,47 +120,34 @@
 
 /* nav menu content*/
 
-#logo-in-menu {
-    display: flex;
-    justify-content: center;
-    height:100px;
-}
-#logo-text-in-menu {
-    background-color: var(--lightblue);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width:300px;
-    height:50px;
-    font-size:36px;
-    border-radius: 15px;
-}
-#logo-menu-content {
-    display: flex;
+/*phone view navmenu */
+
+#navmenu {
+    position: fixed;
+    right:0px;
     width:100%;
-    height:100%;
-    justify-content: center;
+    height:100vh;
+    z-index: 5;
+    background-color: #1b1b33;
+    visibility: hidden;
 }
-#logo-menu-content ul li {
-    text-align: center;
-    font-size: 36px;
-    color: var(--lightblue);
-    margin: 20px;
+@keyframes navmenuopen {
+    0% {
+        right:-100vh;
+    }
+    100% {
+        right:0px;
+    }
 }
-#phone-view-navbutton-home {
-    display: none;
+@keyframes navmenuclose {
+    0% {
+        right:0px;
+    }
+    100% {
+        right:-200vh;
+    }
 }
-#phone-view-navmenu-button {
-    position: absolute;
-    top:400px;
-    font-size:24px;
-    font-weight:500;
-    background-color: var(--orange);
-    width:180px;
-    height:40px;
-    border: none;
-    border-radius: 20px;
-}
+
 
 #navmenu ul {
     list-style: none;
@@ -191,16 +156,103 @@
     top:90px;
 }
 #navmenu ul li {
-    background-color :#404a81bb;
+    text-align: center;
+    color: var(--lightblue);
     padding:20px;
-    font-size:36px;
-    margin:20px;
-    border-radius: 15px;;
+    font-size:32px;
+    margin:-3px;
+    border-radius: 0px;
+    font-weight: 600;
 }
-#navmenu ul li:hover {
-    cursor: pointer;
-    opacity: 0.8;
+#logo-in-menu {
+    display: flex;
 }
+#logo-in-menu-image {
+    width:100px;
+    height:130px;
+    position: absolute;
+    top:-40px;
+    left:0px;
+    z-index: 5;
+}
+#logo-text-in-menu {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top:-25px;
+    font-size:25px;
+    font-weight: 400;
+    width:100%;
+    height:50px;
+    border-radius: 0px;
+    background: rgba(255,255,255, 0.2);
+}
+#logo-menu-content ul {
+    width:100%;
+}
+#logo-menu-content {
+    display: flex;
+    width:100%;
+    height:100%;
+    justify-content: center;
+}
+#logo-menu-content-hr {
+    width:100%;
+    border: 1px solid gray
+}
+#phone-view-navbutton-home {
+    display: block;
+}
+#phone-view-navbutton-services {
+    display: flex;
+    justify-content: center;
+    height: 40px;
+}
+#phone-view-navbutton-services p {
+    position: absolute;
+    top:85px;
+    font-size: 32px;
+    font-weight: 600;
+}
+#phone-view-navbutton-services-sublist {
+    position: absolute;
+    top:170px;
+    width:100%;
+    height:200px;
+    z-index: 5;
+    font-size:22px;
+    display: flex;
+    flex-direction:column;
+    align-items: flex-start;
+    visibility: hidden;
+}
+.phone-view-navbutton-services-sublist-items {
+    color:var(--orange);
+    margin-left:35%;
+    margin-bottom:12.5px;
+}
+#phone-view-navbutton-services-triangle {
+    position: absolute;
+    right:100px;
+    margin-top:15px;
+    border-left: 12.5px solid transparent;
+    border-right: 12.5px solid transparent;
+    border-bottom: 15px solid var(--orange);
+    transform: rotate(180deg);
+}
+#phone-view-navmenu-button {
+    position: absolute;
+    top:580px;
+    font-size:24px;
+    font-weight:600;
+    background-color: var(--orange);
+    width:180px;
+    height:40px;
+    border: none;
+    border-radius: 20px;
+}
+
 
 /************************************************
             [  Home page: Hero image & buttons  ]
@@ -542,11 +594,55 @@
     position: absolute;
     top:2800px;
     width:100%;
-    height:300px;
+    height:200px;
     display: flex;
     justify-content: center;
     background-color: var(--darkblue);
 
+}
+#footer-content {
+    width:100%;
+    height:100%;
+    display: flex;
+    justify-content: center;
+}
+#footer-logo {
+    position: absolute;
+    width:100px;
+    height:140px;
+    left:10px;
+    top:-40px;
+}
+#footer-emailcontact-image {
+    position: absolute;
+    width:40px;
+    height:40px;
+    left:45px;
+    top:80px;
+}
+#footer-emailtext {
+    position: absolute;
+    width:200px;
+    height:40px;
+    left:90px;
+    top:75px;
+    font-size:16px;
+    color:white;
+}
+#footer-bottom-section {
+    position: absolute;
+    display: flex;
+    bottom:6px;
+    flex-direction: row;
+    width:100%;
+    justify-content: center;
+}
+#footer-bottom-section p {
+    color:white;
+}
+#footer-bottom-section span {
+    margin:5px;
+    color: var(--lightblue);
 }
 /************************************************
             [  MEDIA QUERIES: PC  ]
@@ -735,6 +831,16 @@
     }
     .package-section-cards p {
         height:400px;
+    }
+
+    /* footer */
+
+    #footer {
+        top: 1900px;
+    }
+    #footer-bottom-section {
+        justify-content: start;
+        padding-left:80px;
     }
 
 }
